@@ -1,12 +1,12 @@
-# 1.Java8 tutorial
+# 1 Java8 tutorial
 示例代码：com.java8
 入门教程链接： http://winterbe.com/posts/2014/03/16/java-8-tutorial/
 
-# 2.Machine learning
+# 2 Machine learning
 
 https://developers.google.com/machine-learning/crash-course/
 
-# 3.日志级别
+# 3 日志级别
 
 日志记录器（Logger）的行为是分等级的。如下表所示：
 
@@ -33,6 +33,7 @@ Log4j建议只使用四个级别，优先级从高到低分别是 ERROR、WARN�
 putIfAbsent方法主要是在向ConcurrentHashMap中添加键—值对的时候，它会先判断该键值对是否已经存在。
 
 1.如果不存在（新的entry），那么会向map中添加该键值对，并返回null。
+
 2.如果已经存在，那么不会覆盖已有的值，直接返回已经存在的值。
 相当于：
 ```
@@ -44,6 +45,7 @@ putIfAbsent方法主要是在向ConcurrentHashMap中添加键—值对的时候�
 
 返回值：
 （1）如果是新的记录，那么会向map中添加该键值对，并返回null。
+
 （2）如果已经存在，那么不会覆盖已有的值，直接返回已经存在的值。
 
 # 6 自定义注解
