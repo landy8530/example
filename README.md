@@ -16,7 +16,7 @@ Log4j建议只使用四个级别，优先级从高到低分别是 ERROR、WARN�
 比如在这里定义了INFO级别，则应用程序中所有DEBUG级别的日志信息将不被打印出来，也是说大于等于的级别的日志才输出。
 
 
-#4 HashMap的putIfAbsent()方法
+# 4 HashMap的putIfAbsent()方法
 示例代码：com.java8.map.PutIfAbsentTest
 ## 来源
 在此方法出现在HashMap里面之前，JDK给出的解决方案是ConcurrentMap的putIfAbsent()方法。
@@ -28,7 +28,7 @@ Log4j建议只使用四个级别，优先级从高到低分别是 ERROR、WARN�
 3.putIfAbsent()是有返回值的，应该对他的返回值进行非空判断
 4.2和3主要应用在单例模式中
 
-#5 ConcurrentHashMap中的putIfAbsent方法
+# 5 ConcurrentHashMap中的putIfAbsent方法
 
 putIfAbsent方法主要是在向ConcurrentHashMap中添加键—值对的时候，它会先判断该键值对是否已经存在。
 
@@ -46,10 +46,10 @@ putIfAbsent方法主要是在向ConcurrentHashMap中添加键—值对的时候�
 （1）如果是新的记录，那么会向map中添加该键值对，并返回null。
 （2）如果已经存在，那么不会覆盖已有的值，直接返回已经存在的值。
 
-#6 自定义注解
+# 6 自定义注解
 示例代码： com.annatation
 
-#7 Date API
+# 7 Date API
 
 Java 8 contains a brand new date and time API under the package java.time.
 The new Date API is comparable with the Joda-Time library, however it's not the same.
@@ -57,7 +57,7 @@ The following examples cover the most important parts of this new API.
 
 Unlike java.text.NumberFormat the new DateTimeFormatter is immutable and thread-safe.
 
-#8 Annotations
+# 8 Annotations
 
 Annotations in Java 8 are repeatable. Let's dive directly into an example to figure that out.
 
