@@ -6,13 +6,13 @@ package com.java8.constructor;
  * Let's see how the :: keyword works for constructors.
  * First we define an example bean with different constructors:
  */
-class Person {
-    String firstName;
-    String lastName;
+public class Person {
+    public String firstName;
+    public String lastName;
 
-    Person() {}
+    public Person() {}
 
-    Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }

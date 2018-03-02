@@ -1,4 +1,6 @@
-import com.test.ann.Description;
+package com.annatation;
+
+import com.annatation.Description;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -13,7 +15,7 @@ public class ParseAnnotation {
     public static void main(String[] args){
         //使用类加载器加载类
         try {
-            Class c = Class.forName("com.test.ann.Person");//加载使用了定义注解的类
+            Class c = Class.forName("com.annatation.Person");//加载使用了定义注解的类
             //找到类上的注解
             boolean isExist = c.isAnnotationPresent(Description.class);
             if(isExist){

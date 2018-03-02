@@ -1,4 +1,4 @@
-package com;
+package com.java8.builtin;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -7,7 +7,7 @@ import java.util.Optional;
  * @author landyl
  * @create 2018-02-9:34 AM
  */
-public class OptionalDemo {
+public class OptionalTest {
     public static void main(String[] args) {
         //创建Optional实例，也可以通过方法返回值得到。
         Optional<String> name = Optional.of("Sanaulla");
