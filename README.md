@@ -84,14 +84,13 @@ https://www.cnblogs.com/Ming8006/p/6297333.html
  3. 全局的profile配置。全局的profile是定义在Maven安装目录下的“conf/settings.xml”文件中的。
 
 ## 动态配置注意点
-    注入顺序如下，如果没找到相应的值，则再找下一个配置文件中的相应配置
-    1.全局配置文件conf/setting.xml
-    2.用户目录下的setting.xml
-    3.当前工程的pom.xml
-    4.resources目录下的配置文件(本例为${profiles.active}/test.yml)
+ 注入顺序如下，如果没找到相应的值，则再找下一个配置文件中的相应配置
+ 1. 全局配置文件conf/setting.xml
+ 2. 用户目录下的setting.xml
+ 3. 当前工程的pom.xml
+ 4. resources目录下的配置文件(本例为${profiles.active}/test.yml)
 
 ## 参考链接
-
-    1.https://www.cnblogs.com/0201zcr/p/6262762.html
-    2.http://blog.csdn.net/lihe2008125/article/details/50443491
-    3.https://www.cnblogs.com/harvey2017/p/7762286.html 
+ 1. https://www.cnblogs.com/0201zcr/p/6262762.html
+ 2. http://blog.csdn.net/lihe2008125/article/details/50443491
+ 3. https://www.cnblogs.com/harvey2017/p/7762286.html 
