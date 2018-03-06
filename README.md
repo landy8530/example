@@ -89,7 +89,7 @@ profile定义的位置：
     3.当前工程的pom.xml
     4.resources目录下的配置文件(本例为${profiles.active}/test.yml)
 
-参见：
-    * 1.  https://www.cnblogs.com/0201zcr/p/6262762.html 
-    * 2.  http://blog.csdn.net/lihe2008125/article/details/50443491 
-    * 3.  https://www.cnblogs.com/harvey2017/p/7762286.html 
+## 参考链接
+    1. https://www.cnblogs.com/0201zcr/p/6262762.html 
+    2. http://blog.csdn.net/lihe2008125/article/details/50443491 
+    3. https://www.cnblogs.com/harvey2017/p/7762286.html 
