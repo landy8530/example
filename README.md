@@ -18,11 +18,11 @@ Log4j建议只使用四个级别，优先级从高到低分别是 ERROR、WARN�
 
 # 4 HashMap的putIfAbsent()方法
 示例代码：com.java8.map.PutIfAbsentTest
-## 来源
+## 4.1 来源
 在此方法出现在HashMap里面之前，JDK给出的解决方案是ConcurrentMap的putIfAbsent()方法。
 出现在HashMap里面的这个putIfAbsent()方法与之前的解决方法具有相同的功能，
 
-## 特点
+## 4.2 特点
 1.当value为null的时候，putIfAbsent()方法会覆盖null值，直到value不为null为止
 2.当value初始值不为null的时候，putIfAbsent()保证返回值始终是唯一的，并且是多线程安全的
 3.putIfAbsent()是有返回值的，应该对他的返回值进行非空判断
@@ -78,19 +78,19 @@ https://www.cnblogs.com/Ming8006/p/6297333.html
 
  profile可以让我们定义一系列的配置信息，然后指定其激活条件。这样我们就可以定义多个profile，然后每个profile对应不同的激活条件和配置信息，从而达到不同环境使用不同配置信息的效果。
  
-## profile定义的位置
+## 11.1 profile定义的位置
  1. 针对于特定项目的profile配置我们可以定义在该项目的pom.xml中。
  2. 针对于特定用户的profile配置，我们可以在用户的settings.xml文件中定义profile。该文件在用户家目录下的“.m2”目录下。
  3. 全局的profile配置。全局的profile是定义在Maven安装目录下的“conf/settings.xml”文件中的。
 
-## 动态配置注意点
+## 11.2 动态配置注意点
  注入顺序如下，如果没找到相应的值，则再找下一个配置文件中的相应配置
  1. 全局配置文件conf/setting.xml
  2. 用户目录下的setting.xml
  3. 当前工程的pom.xml
  4. resources目录下的配置文件(本例为${profiles.active}/test.yml)
 
-## 参考链接
+## 11.3 参考链接
  1. https://www.cnblogs.com/0201zcr/p/6262762.html
  2. http://blog.csdn.net/lihe2008125/article/details/50443491
  3. https://www.cnblogs.com/harvey2017/p/7762286.html 
