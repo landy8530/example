@@ -1,0 +1,34 @@
+module01:
+  testStringKey: testValue
+  testBooleanKey: 0
+  testIntKey: 10
+  testFloatKey: 3.45
+  testDoubleKey: 4.566
+  testLongKey: 3234242
+
+#以下配置为动态注入，通过setting.xml或者pom.xml文件的profile配置
+global:
+  homepage.medicareplans: '${homepage.medicareplans}'
+  github.url: '${agent.images.host}'
+
+local:
+  profile.path: '${local.profile.path}'
+
+api:
+  #Open to public network, could not call these api directly, call them via 3scale
+  hmac:
+    - lead/create
+    - lead/update
+    - leads
+    - lead/get-lead
+    - lead/update-lead-by-token
+    - lead/get-lead-by-token
+    - lead/generate-token
+    - lead/validate-token
+    - lead/expire-token
+    - lead/completed-email
+    - lead/ping
+    - lead/re-send-odc-invitation
+    - lead/get-agent-notes
+    - lead/update-agent-notes
+    - lead/create-lead-token
