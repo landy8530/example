@@ -79,9 +79,9 @@ https://www.cnblogs.com/Ming8006/p/6297333.html
  profile可以让我们定义一系列的配置信息，然后指定其激活条件。这样我们就可以定义多个profile，然后每个profile对应不同的激活条件和配置信息，从而达到不同环境使用不同配置信息的效果。
  
 ## profile定义的位置
-（1）针对于特定项目的profile配置我们可以定义在该项目的pom.xml中。
-（2）针对于特定用户的profile配置，我们可以在用户的settings.xml文件中定义profile。该文件在用户家目录下的“.m2”目录下。
-（3）全局的profile配置。全局的profile是定义在Maven安装目录下的“conf/settings.xml”文件中的。
+ 1. 针对于特定项目的profile配置我们可以定义在该项目的pom.xml中。
+ 2. 针对于特定用户的profile配置，我们可以在用户的settings.xml文件中定义profile。该文件在用户家目录下的“.m2”目录下。
+ 3. 全局的profile配置。全局的profile是定义在Maven安装目录下的“conf/settings.xml”文件中的。
 
 ## 动态配置注意点
     注入顺序如下，如果没找到相应的值，则再找下一个配置文件中的相应配置
