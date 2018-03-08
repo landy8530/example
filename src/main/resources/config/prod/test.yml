@@ -1,1 +1,10 @@
 local.profile.path: prod
+server:
+  port: 8083
+  env: prod
+
+ftp: hello prod
+
+spring:
+  profiles:
+    active: prod

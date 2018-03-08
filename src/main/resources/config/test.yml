@@ -14,6 +14,15 @@ global:
 local:
   profile.path: '${local.profile.path}'
 
+ftp: '${ftp}'
+#激活的环境配置
+spring:
+  profiles:
+    active: '${spring.profiles.active}'
+#端口
+server:
+  port: '${server.port}'
+
 api:
   #Open to public network, could not call these api directly, call them via 3scale
   hmac:
