@@ -1,9 +1,1 @@
 local.profile.path: dev
-server:
-  port: 8084
-
-ftp: hello dev
-
-spring:
-  profiles:
-    active: dev
