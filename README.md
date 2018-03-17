@@ -95,7 +95,5 @@ https://www.cnblogs.com/Ming8006/p/6297333.html
  2. http://blog.csdn.net/lihe2008125/article/details/50443491
  3. https://www.cnblogs.com/harvey2017/p/7762286.html
 
-# 13 关于 Oracle 的数据导入导出及 Sql Loader (sqlldr) 的用法
- 1. https://docs.oracle.com/cd/B10501_01/server.920/a96652/ch05.htm#1005617
- 2. https://www.cnblogs.com/flish/archive/2010/05/31/1748221.html
+
 
