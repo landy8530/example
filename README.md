@@ -96,4 +96,35 @@ https://www.cnblogs.com/Ming8006/p/6297333.html
  3. https://www.cnblogs.com/harvey2017/p/7762286.html
 
 
+# 12 SLF4J门面日志框架
+## 12.1 门面模式
+slf4j是门面模式的典型应用，门面模式，其核心为外部与一个子系统的通信必须通过一个统一的外观对象进行，使得子系统更易于使用
+门面模式的核心为Facade即门面对象，门面对象核心为几个点：
+1.知道所有子角色的功能和责任
+2.将客户端发来的请求委派到子系统中，没有实际业务逻辑
+3.不参与子系统内业务逻辑的实现
 
+## 12.2 为什么使用slf4j
+我们为什么要使用slf4j，举个例子：
+```
+我们自己的系统中使用了logback这个日志系统
+我们的系统使用了A.jar，A.jar中使用的日志系统为log4j
+我们的系统又使用了B.jar，B.jar中使用的日志系统为slf4j-simple
+这样，我们的系统就不得不同时支持并维护logback、log4j、slf4j-simple三种日志框架，非常不便。
+```
+
+解决这个问题的方式就是引入一个适配层，由适配层决定使用哪一种日志系统，而调用端只需要做的事情就是打印日志而不需要关心如何打印日志，slf4j或者commons-logging就是这种适配层，slf4j是本文研究的对象。
+从上面的描述，我们必须清楚地知道一点：slf4j只是一个日志标准，并不是日志系统的具体实现。理解这句话非常重要，slf4j只做两件事情：
+1. 提供日志接口
+2. 提供获取具体日志对象的方法
+
+slf4j-simple、logback都是slf4j的具体实现，log4j并不直接实现slf4j，但是有专门的一层桥接slf4j-log4j12来实现slf4j。
+
+## 12.3 SLF4j 和 common-logging
+https://blog.csdn.net/xydds/article/details/51606010
+
+## 12.4 配置Slf4j依赖，桥接各种多个日志组件（排除commons-logging依赖的影响)
+https://www.cnblogs.com/gsyun/p/6814696.html
+
+## 12.5 日志组件slf4j介绍及配置详解
+https://blog.csdn.net/foreverling/article/details/51385128
