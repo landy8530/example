@@ -134,3 +134,7 @@ https://blog.csdn.net/foreverling/article/details/51385128
 在java 编程中，不可避免用到计算时间差。前面我写过几篇文章，关于java 时间计算的，还有timezone 转换的文章，但没有这么具体到相差到天数，小时，分钟，秒数都列出来的情况，所以这里再总结下。
 1. 用JDK 自带API 实现。
 2. 利用 joda time library 来实现.
+
+#14 从jar包中读取资源Class对象
+
+com.utils.PackageUtil
