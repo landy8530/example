@@ -138,3 +138,35 @@ https://blog.csdn.net/foreverling/article/details/51385128
 #14 从jar包中读取资源Class对象
 
 com.utils.PackageUtil
+
+#15 JAVA 泛型通配符 ? EXTENDS SUPER 的用法
+
+## 15.1 <? extends Hero>
+
+ArrayList heroList<? extends Hero> 表示这是一个Hero泛型或者其子类泛型
+heroList 的泛型可能是Hero
+heroList 的泛型可能是APHero
+heroList 的泛型可能是ADHero
+所以 可以确凿的是，从heroList取出来的对象，一定是可以转型成Hero的
+
+
+但是，不能往里面放东西，因为
+放APHero就不满足<ADHero>
+放ADHero又不满足<APHero>
+
+## 15.2 <? super Hero>
+
+ArrayList heroList<? super Hero> 表示这是一个Hero泛型或者其父类泛型
+heroList的泛型可能是Hero
+heroList的泛型可能是Object
+
+可以往里面插入Hero以及Hero的子类
+但是取出来有风险，因为不确定取出来是Hero还是Object
+
+## 15.3 泛型通配符?
+
+泛型通配符? 代表任意泛型
+既然?代表任意泛型，那么换句话说，这个容器什么泛型都有可能
+
+所以只能以Object的形式取出来
+并且不能往里面放对象，因为不知道到底是一个什么泛型的容器
