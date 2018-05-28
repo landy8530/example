@@ -312,7 +312,7 @@ statementType：STATEMENT（非预编译），PREPARED（预编译）或CALLABLE
 select * from user where name = 'sprite';
 ```
 
-# 17 mybatis 中的<![CDATA[ ]]>
+# 17 mybatis 中的 <![CDATA[ ]]>
 
 在使用mybatis 时我们sql是写在xml 映射文件中，如果写的sql中有一些特殊的字符的话，在解析xml文件的时候会被转义，但我们不希望他被转义，所以我们要使用<![CDATA[ ]]>来解决。
 
