@@ -170,3 +170,146 @@ heroList的泛型可能是Object
 
 所以只能以Object的形式取出来
 并且不能往里面放对象，因为不知道到底是一个什么泛型的容器
+
+# 16 mybatis 拼接动态表名、字段名
+
+## 16.1 案例
+
+需要根据不同的需求，传入不同的表名进行查询。
+
+```
+<select id="loadRequestsForProcess" resultType="com.landy.Request" statementType="STATEMENT">
+    <include refid="loadRequestsForProcessSql" />
+</select>
+
+<sql id="loadRequestsForProcessSql">
+    <![CDATA[
+    SELECT
+        r.*
+    FROM
+        csync_request r
+    WHERE r.process_date <= SYSDATE
+      AND r.request_status_id<>2
+      AND r.update_workflow_id = ${updateWorkflowId}
+      AND EXISTS (
+        SELECT
+            1
+        FROM
+            ${csyncDetailTableName} pd,
+            csync_update_result ur
+        WHERE pd.request_id = r.request_id
+          AND pd.update_result_id = ur.update_result_id
+          AND ur.process_status = 1 )
+    ORDER BY request_id
+    ]]>
+</sql>
+
+```
+
+注意：
+1. 需要加入statementType="STATEMENT"
+2. 动态表名用${}表示
+
+## 16.2 原理
+
+动态SQL是mybatis的强大特性之一，mybatis在对sql语句进行预编译之前，会对sql进行动态解析，解析为一个BoundSql对象，也是在此处对动态sql进行处理。
+
+在动态sql解析过程，#{}与${}的效果是不一样的：
+
+
+### 16.2.1 #{} 解析为一个 JDBC 预编译语句（prepared statement）的参数标记符。
+
+
+如以下sql语句:
+
+```
+select * from user where name = #{name};
+```
+
+会被解析为：
+
+```
+select * from user where name = ?;
+```
+
+可以看到#{}被解析为一个参数占位符？。
+
+### 16.2.2 ${} 仅仅为一个纯碎的 string 替换，在动态 SQL 解析阶段将会进行变量替换
+
+如以下sql语句：
+
+```
+select * from user where name = ${name};
+```
+当我们传递参数“sprite”时，sql会解析为：
+```
+select * from user where name = "sprite";
+```
+
+可以看到预编译之前的sql语句已经不包含变量name了。
+
+综上所得， ${} 的变量的替换阶段是在动态 SQL 解析阶段，而 #{}的变量的替换是在 DBMS 中。
+
+## 16.3 总结
+
+#{}与${}的区别可以简单总结如下：
+
+1. #{}将传入的参数当成一个字符串，会给传入的参数加一个双引号
+2. ${}将传入的参数直接显示生成在sql中，不会添加引号
+3. #{}能够很大程度上防止sql注入，***${}无法防止sql注入***
+
+   ${}在预编译之前已经被变量替换了，这会存在sql注入的风险。如下sql
+
+```
+select * from ${tableName} where name = ${name}
+```
+
+如果传入的参数tableName为user; delete user; --，那么sql动态解析之后，预编译之前的sql将变为：
+
+```
+select * from user; delete user; -- where name = ?;
+```
+
+--之后的语句将作为注释不起作用，顿时我和我的小伙伴惊呆了！！！看到没，本来的查询语句，竟然偷偷的包含了一个删除表数据的sql，是删除，删除，删除！！！重要的事情说三遍，可想而知，这个风险是有多大。
+
+注意点：
+
+1. ${}一般用于传输数据库的表名、字段名等
+2. 能用#{}的地方尽量别用${}
+
+
+## 16.4 动态替换表名/字段名
+
+进入正题，通过上面的分析，相信大家可能已经对如何动态调用表名和字段名有些思路了。示例如下：
+
+```
+<select id="getUser" resultType="java.util.Map" parameterType="java.lang.String" statementType="STATEMENT">
+    select
+        ${columns}
+    from ${tableName}
+        where COMPANY_REMARK = ${company}
+  </select>
+```
+
+要实现动态调用表名和字段名，就不能使用预编译了，需添加statementType="STATEMENT" 。
+
+```
+statementType：STATEMENT（非预编译），PREPARED（预编译）或CALLABLE中的任意一个，这就告诉 MyBatis 分别使用Statement，PreparedStatement或者CallableStatement。默认：PREPARED。这里显然不能使用预编译，要改成非预编译。
+```
+
+其次，sql里的变量取值是${xxx},不是#{xxx}。
+
+因为${}是将传入的参数直接显示生成sql，如${xxx}传入的参数为字符串数据，需在参数传入前加上引号，如：
+
+```
+ String name = "sprite";
+ name = "'" + name + "'";
+```
+
+这样，sql就变成：
+
+```
+select * from user where name = 'sprite';
+```
+
+
