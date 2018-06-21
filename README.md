@@ -334,3 +334,7 @@ select * from user where name = 'sprite';
 ```
 
 因为这里有 ">"  "<=" 特殊字符所以要使用 <![CDATA[   ]]> 来注释，但是有<if> 标签，所以把<if>等 放外面.
+
+# 18 算法链接
+
+https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
