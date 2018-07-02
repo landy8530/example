@@ -338,3 +338,7 @@ select * from user where name = 'sprite';
 # 18 算法链接
 
 https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+
+# 19 添加BeanUtil工具类
+
+对日期进行特殊处理（增强处理）
