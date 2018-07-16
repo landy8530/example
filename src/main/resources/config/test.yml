@@ -26,21 +26,21 @@ server:
 api:
   #Open to public network, could not call these api directly, call them via 3scale
   hmac:
-    - lead/create
-    - lead/update
-    - leads
-    - lead/get-lead
-    - lead/update-lead-by-token
-    - lead/get-lead-by-token
-    - lead/generate-token
-    - lead/validate-token
-    - lead/expire-token
-    - lead/completed-email
-    - lead/ping
-    - lead/re-send-odc-invitation
-    - lead/get-agent-notes
-    - lead/update-agent-notes
-    - lead/create-lead-token
+    - xhf/create
+    - xhf/update
+    - xhfs
+    - xhf/get-xhf
+    - xhf/update-xhf-by-token
+    - xhf/get-xhf-by-token
+    - xhf/generate-token
+    - xhf/validate-token
+    - xhf/expire-token
+    - xhf/completed-email
+    - xhf/ping
+    - xhf/re-send-odc-invitation
+    - xhf/get-agent-notes
+    - xhf/update-agent-notes
+    - xhf/create-xhf-token
 
 myProps: #自定义的属性和值
   simpleProp: simplePropValue
