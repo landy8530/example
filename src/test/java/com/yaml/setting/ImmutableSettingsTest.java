@@ -96,7 +96,7 @@ public class ImmutableSettingsTest {
         ImmutableSettings.DefaultSettingsBuilder builder = new ImmutableSettings.DefaultSettingsBuilder();
         expectedEx.expect(SettingsException.class);
         try {
-            builder.loadFromUrl(new URL("http://test.ehealth-china.com"));
+            builder.loadFromUrl(new URL("http://test.landy-china.com"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
