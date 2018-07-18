@@ -13,7 +13,7 @@ module01:
 #3.当前工程的pom.xml
 #4.resources目录下的配置文件(本例为${profiles.active}/test.yml)
 global:
-  homepage.medicareplans: '${homepage.medicareplans}'
+  homepage.xhfplans: '${homepage.xhfplans}'
   agent.images.host: '${agent.images.host}'
 
 local:

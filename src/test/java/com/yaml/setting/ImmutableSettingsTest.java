@@ -206,7 +206,7 @@ public class ImmutableSettingsTest {
         Assert.assertEquals(spySettings.get("module01.testStringKey", ""), "testValue");
         Assert.assertEquals(spySettings.get("test", ""), "");
 
-        System.out.println(spySettings.get("global.homepage.medicareplans"));
+        System.out.println(spySettings.get("global.homepage.xhfplans"));
         System.out.println(spySettings.get("global.agent.images.host"));
         System.out.println(spySettings.get("local.profile.path"));
     }

@@ -8,7 +8,7 @@ module01:
 
 #以下配置为动态注入，通过setting.xml或者pom.xml文件的profile配置
 global:
-  homepage.medicareplans: '${homepage.medicareplans}'
+  homepage.xhfplans: '${homepage.xhfplans}'
   github.url: '${agent.images.host}'
 
 local:
