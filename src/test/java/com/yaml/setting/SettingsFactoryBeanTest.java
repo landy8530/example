@@ -21,7 +21,7 @@ public class SettingsFactoryBeanTest {
         Assert.assertTrue( 9 == settings.getAsInt("module02.testIntKey"));
     }
 
-    @Test(expected = FailedToResolveConfigException.class)
+    @Test(expected = ResolveFailedConfigException.class)
     public void testExceptionWhenSetAWrongConfigPath(){
         SettingsFactoryBean settingsFactoryBean = new SettingsFactoryBean();
         settingsFactoryBean.setConfigFilePath("worryPath");

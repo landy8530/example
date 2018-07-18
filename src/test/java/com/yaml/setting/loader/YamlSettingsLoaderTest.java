@@ -1,6 +1,6 @@
 package com.yaml.setting.loader;
 
-import com.yaml.setting.util.Streams;
+import com.yaml.setting.util.StreamUtil;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.core.io.Resource;
@@ -19,7 +19,7 @@ public class YamlSettingsLoaderTest {
     public void testConfigLoading() throws IOException {
         InputStream is = loadConfigURL("classpath*:config/test.yml").openStream();
         YamlSettingsLoader settingsLoader = new YamlSettingsLoader();
-        Map<String, String> loadedSettings = settingsLoader.load(Streams.copyToString(new InputStreamReader(is, "UTF-8")));
+        Map<String, String> loadedSettings = settingsLoader.load(StreamUtil.copyToString(new InputStreamReader(is, "UTF-8")));
         Assert.assertNotNull(loadedSettings);
         Assert.assertEquals("testValue", ((HashMap) loadedSettings).get("module01.testStringKey"));
     }

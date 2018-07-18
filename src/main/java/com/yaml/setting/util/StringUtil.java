@@ -2,7 +2,7 @@ package com.yaml.setting.util;
 
 import java.util.StringTokenizer;
 
-public class Strings {
+public class StringUtil {
 
     public static final String DEFAULT_SPLIT = ";";
 

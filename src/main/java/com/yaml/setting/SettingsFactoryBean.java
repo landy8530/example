@@ -19,7 +19,7 @@ public class SettingsFactoryBean extends AbstractFactoryBean<Settings> {
                 builder.loadFromUrl(resource.getURL());
             }
         } catch (IOException e) {
-            throw new FailedToResolveConfigException("Failed to resolve config path ["+ settingsFileConfig.getConfigPath()+"]", e);
+            throw new ResolveFailedConfigException("Failed to resolve config path ["+ settingsFileConfig.getConfigPath()+"]", e);
         }
 
 

@@ -11,7 +11,7 @@ import java.util.Optional;
  * A java.util.Stream represents a sequence of elements on which one or more operations can be performed.
  * Stream operations are either intermediate or terminal.
  * While terminal operations return a result of a certain type, intermediate operations return the stream itself so you can chain multiple method calls in a row.
- * Streams are created on a source, e.g. a java.util.Collection like lists or sets (maps are not supported).
+ * StreamUtil are created on a source, e.g. a java.util.Collection like lists or sets (maps are not supported).
  * Stream operations can either be executed sequential or parallel.
  */
 public class StreamsTest {
@@ -119,7 +119,7 @@ public class StreamsTest {
         reduced.ifPresent(System.out::println);
         // "aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2"
 
-        // Parallel Streams
+        // Parallel StreamUtil
 
     }
 }

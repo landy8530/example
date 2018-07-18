@@ -5,7 +5,7 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
 
-public class Streams {
+public class StreamUtil {
 
     public static final int BUFFER_SIZE = 1024 * 8;
 

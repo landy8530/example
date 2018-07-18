@@ -2,8 +2,8 @@ package com.yaml.setting;
 
 import com.yaml.setting.loader.SettingsLoader;
 import com.yaml.setting.loader.SettingsLoaderFactory;
-import com.yaml.setting.util.Streams;
-import com.yaml.setting.util.Strings;
+import com.yaml.setting.util.StreamUtil;
+import com.yaml.setting.util.StringUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.*;
 
-import static com.yaml.setting.util.Strings.toCamelCase;
+import static com.yaml.setting.util.StringUtil.toCamelCase;
 
 public class ImmutableSettings implements Settings {
 
@@ -53,7 +53,7 @@ public class ImmutableSettings implements Settings {
         if (retVal != null) {
             return retVal;
         }
-        return settings.get(Strings.toCamelCase(setting));
+        return settings.get(StringUtil.toCamelCase(setting));
     }
 
     @Override
@@ -167,7 +167,7 @@ public class ImmutableSettings implements Settings {
         public DefaultSettingsBuilder loadFromStream(String resourceName, InputStream is) throws SettingsException {
             SettingsLoader settingsLoader = SettingsLoaderFactory.createSettingsLoader();
             try {
-                Map<String, String> loadedSettings = settingsLoader.load(Streams.copyToString(new InputStreamReader(is, "UTF-8")));
+                Map<String, String> loadedSettings = settingsLoader.load(StreamUtil.copyToString(new InputStreamReader(is, "UTF-8")));
                 put(loadedSettings);
             } catch (Exception e) {
                 throw new SettingsException("Failed to load settings from [" + resourceName + "]", e);
