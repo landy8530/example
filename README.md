@@ -187,7 +187,7 @@ heroList的泛型可能是Object
     SELECT
         r.*
     FROM
-        csync_request r
+        xhf_request r
     WHERE r.process_date <= SYSDATE
       AND r.request_status_id<>2
       AND r.update_workflow_id = ${updateWorkflowId}
@@ -195,8 +195,8 @@ heroList的泛型可能是Object
         SELECT
             1
         FROM
-            ${csyncDetailTableName} pd,
-            csync_update_result ur
+            ${xhfDetailTableName} pd,
+            xhf_update_result ur
         WHERE pd.request_id = r.request_id
           AND pd.update_result_id = ur.update_result_id
           AND ur.process_status = 1 )
