@@ -9,7 +9,7 @@ public class SettingsFileConfigTest {
     public void testDefaultConfigPath() {
         SettingsFileConfig settingsFileConfig = new SettingsFileConfig();
         Assert.assertEquals("classpath*:config/*.yml", settingsFileConfig.getConfigPath());
-        settingsFileConfig.setConfigPath("/data/bov2/config/");
-        Assert.assertEquals("/data/bov2/config/", settingsFileConfig.getConfigPath());
+        settingsFileConfig.setConfigPath("/data/xhf/config/");
+        Assert.assertEquals("/data/xhf/config/", settingsFileConfig.getConfigPath());
     }
 }
