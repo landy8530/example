@@ -141,6 +141,12 @@ com.utils.PackageUtil
 
 #15 JAVA 泛型通配符 ? EXTENDS SUPER 的用法
 
+<? extends T>和<? super T>是Java泛型中的“通配符（Wildcards）”和“边界（Bounds）”的概念。
+<? extends T>：是指 “上界通配符（Upper Bounds Wildcards）”
+<? super T>：是指 “下界通配符（Lower Bounds Wildcards）”
+
+https://itimetraveler.github.io/2016/12/27/%E3%80%90Java%E3%80%91%E6%B3%9B%E5%9E%8B%E4%B8%AD%20extends%20%E5%92%8C%20super%20%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/
+
 ## 15.1 <? extends Hero>
 
 ArrayList heroList<? extends Hero> 表示这是一个Hero泛型或者其子类泛型
@@ -170,6 +176,10 @@ heroList的泛型可能是Object
 
 所以只能以Object的形式取出来
 并且不能往里面放对象，因为不知道到底是一个什么泛型的容器
+
+## 15.4 总结
+频繁往外读取内容的，适合用上界Extends。
+经常往里插入的，适合用下界Super。
 
 # 16 mybatis 拼接动态表名、字段名
 
