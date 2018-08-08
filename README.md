@@ -353,3 +353,18 @@ https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 # 19 添加BeanUtil工具类
 
 对日期进行特殊处理（增强处理）
+
+# 20 阿里云tomcat启动慢
+
+查看tomcat日志，看看是否此问题
+以Centos7为例，
+```
+1.yum install rngd-tools  或者rng-tools
+2.systemctl start rngd启动服务
+3.systemctl daemon-reload重新载入服务
+4.systemctl restart rngd重启服务
+```
+我们可以测试一下随机数的生成速度
+```
+watch -n 1 cat /proc/sys/kernel/random/entropy_avail
+```
