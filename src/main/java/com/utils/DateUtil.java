@@ -96,37 +96,29 @@ public class DateUtil {
     }
 
     public static int getYear(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-
+        Calendar calendar = getCalendar(date);
         return calendar.get(Calendar.YEAR);
     }
 
     public static int getMonth(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-
+        Calendar calendar = getCalendar(date);
         return calendar.get(Calendar.MONTH);
     }
 
     public static int getDay(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-
+        Calendar calendar = getCalendar(date);
         return calendar.get(Calendar.DAY_OF_MONTH);
     }
 
     public static Date plusMonths(Date date, int months) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
+        Calendar calendar = getCalendar(date);
         calendar.add(Calendar.MONTH, months);
 
         return calendar.getTime();
     }
 
     public static Date plusDays(Date date, int days) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
+        Calendar calendar = getCalendar(date);
         calendar.add(Calendar.DAY_OF_MONTH, days);
 
         return calendar.getTime();
@@ -167,6 +159,12 @@ public class DateUtil {
             }
         }
         return age;
+    }
+
+    public static Calendar getCalendar(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar;
     }
 
     public static void main(String[] args) {
