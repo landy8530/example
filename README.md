@@ -368,3 +368,5 @@ https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 ```
 watch -n 1 cat /proc/sys/kernel/random/entropy_avail
 ```
+
+# 21 添加如何访问https协议接口
