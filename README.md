@@ -372,3 +372,7 @@ watch -n 1 cat /proc/sys/kernel/random/entropy_avail
 # 21 添加如何访问https协议接口
 
 # 22 java 获取当月第一天和最后一天 获取前一个月第一天和最后一天
+
+# 23 java语法糖
+
+https://segmentfault.com/a/1190000016048454
