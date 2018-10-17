@@ -1,6 +1,7 @@
 package com.annatation;
 
 import com.annatation.Description;
+import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -28,8 +29,11 @@ public class ParseAnnotation {
             for(Method m : ms){
                 boolean isMExist = m.isAnnotationPresent(Description.class);
                 if(isMExist){
-                    Description d = m.getAnnotation(Description.class);
-                    System.out.println(d.value());
+                    Description d = AnnotationUtils.findAnnotation(m,
+                            Description.class);
+                    //Description d = m.getAnnotation(Description.class);
+                    System.out.println("value:----" + d.value());
+                    System.out.println("aliasFor:" + d.desc());
                 }
             }
             //另外一种注解方式

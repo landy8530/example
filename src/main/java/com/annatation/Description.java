@@ -1,5 +1,7 @@
 package com.annatation;
 
+import org.springframework.core.annotation.AliasFor;
+
 import java.lang.annotation.*;
 
 /**
@@ -36,6 +38,11 @@ public @interface Description {
      * 3.可以包含默认值，通过default实现
      * 4.如果只有一个方法（成员变量），最好命名为value
      */
-    String value();
+    @AliasFor("desc")
+    String value() default "";
+
     int count() default 1; //默认值为1
+
+    @AliasFor("value")
+    String desc() default "";
 }

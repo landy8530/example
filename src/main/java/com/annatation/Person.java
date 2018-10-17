@@ -11,7 +11,7 @@ public class Person {
     private int age;
 
     //在方法上使用定义的Description注解
-    @Description(value="method annotation",count=3)
+    @Description(desc="method annotation",count=3)
     public String speak() {
         return "speaking...";
     }
