@@ -379,3 +379,8 @@ https://segmentfault.com/a/1190000016048454
 
 https://www.cnblogs.com/Gyoung/p/8663395.html 
 https://www.jianshu.com/p/fb6731ee53d2
+
+# 24 Redis
+http://doc.redisfans.com/
+https://blog.csdn.net/wxx151556/article/details/78493147
+
