@@ -384,3 +384,6 @@ https://www.jianshu.com/p/fb6731ee53d2
 http://doc.redisfans.com/
 https://blog.csdn.net/wxx151556/article/details/78493147
 
+# 25 Spring init
+https://blog.csdn.net/koflance/article/details/59304090
+https://www.cnblogs.com/fyx158497308/p/3977391.html
