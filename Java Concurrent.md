@@ -1,5 +1,6 @@
 # 并发异常
 https://www.cnblogs.com/snowater/p/8024776.html
+https://blog.csdn.net/kingzone_2008/article/details/41368989
 
 ```java
 import com.ehi.csync.enums.UpdateWorkflowIdEnum;
