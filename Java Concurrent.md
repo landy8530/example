@@ -1,7 +1,7 @@
 # 并发异常
 https://www.cnblogs.com/snowater/p/8024776.html
 
-```
+```java
 import com.ehi.csync.enums.UpdateWorkflowIdEnum;
 import com.ehi.csync.update.column.domain.UpdateColumn;
 import org.apache.commons.collections.CollectionUtils;
