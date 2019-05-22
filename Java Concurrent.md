@@ -29,19 +29,20 @@ public class UpdateColumnHandler {
 
     static {
         for (int i = 0;i<10;i++) {
-            UpdateColumn updateColumn = new UpdateColumn();
-            updateColumn.setUpdateColumnId(i);
-            updateColumn.setUpdateColumnName("Landy" + i);
-            int index = new Random().nextInt(4);
-            int updateWorkId = WORKFLOW_IDS.get(index);
-            updateColumn.setUpdateWorkflowId(updateWorkId);
-            updateColumnList.add(updateColumn);
-            if(UPDATE_COLUMNS_MAP_TEMP.containsKey(updateWorkId)) {
-                UPDATE_COLUMNS_MAP_TEMP.get(updateWorkId).add(updateColumn);
-            } else {
-                List<UpdateColumn> updateColumns = new ArrayList<>();
-                updateColumns.add(updateColumn);
-                UPDATE_COLUMNS_MAP_TEMP.put(updateWorkId,updateColumns);
+            for(int j=0;j<WORKFLOW_IDS.size();j++) {
+                UpdateColumn updateColumn = new UpdateColumn();
+                updateColumn.setUpdateColumnId(i);
+                updateColumn.setUpdateColumnName("Landy" + i);
+                int updateWorkId = WORKFLOW_IDS.get(j);
+                updateColumn.setUpdateWorkflowId(updateWorkId);
+                updateColumnList.add(updateColumn);
+                if(UPDATE_COLUMNS_MAP_TEMP.containsKey(updateWorkId)) {
+                    UPDATE_COLUMNS_MAP_TEMP.get(updateWorkId).add(updateColumn);
+                } else {
+                    List<UpdateColumn> updateColumns = new ArrayList<>();
+                    updateColumns.add(updateColumn);
+                    UPDATE_COLUMNS_MAP_TEMP.put(updateWorkId,updateColumns);
+                }
             }
         }
     }
@@ -113,9 +114,9 @@ public class UpdateColumnHandler {
 
     public static void main(String[] args) {
         UpdateColumnHandler updateColumnHandler = new UpdateColumnHandler();
+        updateColumnHandler.initUpdateColumnsMap();
         for(int i=0;i<50;i++) {
             new Thread(()->{
-                updateColumnHandler.initUpdateColumnsMap();
                 int index = new Random().nextInt(4);
                 int updateWorkId = WORKFLOW_IDS.get(index);
                 List<UpdateColumn> updateColumns = updateColumnHandler.getUpdateColumns(UpdateWorkflowIdEnum.fromValue(updateWorkId));
@@ -126,7 +127,7 @@ public class UpdateColumnHandler {
                     }
                 }
 
-                //System.out.println("current thread:" + Thread.currentThread().getName() + ",startDate:" + getDateTime2String(threadLocal.get()));
+                System.out.println("current thread:" + Thread.currentThread().getName());
                 try {
                     TimeUnit.SECONDS.sleep(10);
                 } catch (InterruptedException e) {
@@ -134,6 +135,10 @@ public class UpdateColumnHandler {
                 }
             }).start();
         }
+//        for(int i=0;i<50;i++) {
+//            int index = new Random().nextInt(4);
+//            System.out.println(index);
+//        }
     }
 }
 
