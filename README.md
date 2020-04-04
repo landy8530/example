@@ -391,3 +391,15 @@ https://www.cnblogs.com/fyx158497308/p/3977391.html
 # 26 Java Collections
 https://howtodoinjava.com/java/collections/hashmap/performance-comparison-of-different-ways-to-iterate-over-hashmap/
 https://howtodoinjava.com/java/collections/performance-comparison-of-different-for-loops-in-java/
+
+# 27 网站全变灰色解决方案
+
+```html
+html { 
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+```
