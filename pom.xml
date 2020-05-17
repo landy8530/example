@@ -51,7 +51,7 @@
         <log4j.version>1.2.17</log4j.version>
         <logback.version>1.2.3</logback.version>
 
-        <mysql.version>5.1.38</mysql.version>
+        <mysql.version>8.0.20</mysql.version>
         <jsoup.version>1.6.0</jsoup.version>
 
         <commons.dbcp.version>1.4</commons.dbcp.version>
@@ -280,6 +280,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
 
     </dependencies>
